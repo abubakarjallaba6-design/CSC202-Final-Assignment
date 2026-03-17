@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clinic Queue</title></head>
+<body>
+    <h1>🏥 Health-Clinic Dashboard</h1>
+    <p>Patients Treated Today: <strong>{{ total }}</strong></p>
+    <hr>
+    <h3>Current Waiting List:</h3>
+    <ul>
+        {% for p in queue %}
+            <li>{{ p.arrival_time }} - <strong>{{ p.name }}</strong> ({{ p.ailment }})</li>
+        {% else %}
+            <li>The queue is currently empty.</li>
+        {% endfor %}
+    </ul>
+    <a href="/add"><button>Register New Patient</button></a>
+    {% if queue %}
+        <a href="/treat"><button style="background-color: #ffcccb;">Treat Next Patient</button></a>
+    {% endif %}
+</body>
+</html>
