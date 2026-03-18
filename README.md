@@ -31,3 +31,7 @@ The `Patient` class in `model.py` demonstrates key OOP principles:
 - **Registration**: A simple form to input patient data.
 - **Admin Control**: A "Reset System" feature to clear the queue.
 - **Design**: Used CSS to make the app easy to read.
+## 🔮 Future Enhancements
+- Connect to a database to save patient history forever.
+- Add a "Priority" button for emergency cases.
+- Add a search bar to find specific patients in the queue.
