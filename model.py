@@ -8,3 +8,7 @@ class Patient:
 
     def get_summary(self):
         return f"Patient {self.name} is seeking treatment for {self.ailment}."
+
+    def get_display_name(self):
+        """Returns a formatted string for the UI."""
+        return f"Patient: {self.name} (Reason: {self.ailment})"
