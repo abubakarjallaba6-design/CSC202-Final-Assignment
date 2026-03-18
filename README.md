@@ -35,3 +35,7 @@ The `Patient` class in `model.py` demonstrates key OOP principles:
 - Connect to a database to save patient history forever.
 - Add a "Priority" button for emergency cases.
 - Add a search bar to find specific patients in the queue.
+---
+**Course**: CSC 202 - Building for the Web  
+**Submission Date**: March 20th, 2026  
+**Project Status**: Complete and ready for grading.
