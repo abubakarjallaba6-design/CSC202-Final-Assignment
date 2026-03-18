@@ -21,3 +21,8 @@ The core of this application is a **First-In, First-Out (FIFO)** queue. In a med
 The `Patient` class in `model.py` demonstrates key OOP principles:
 - **Encapsulation**: Attributes like `name`, `ailment`, and `arrival_time` are bundled within the object.
 - **Behavior**: Methods like `get_summary()` and `is_urgent()` provide logic specific to the data.
+## ⚙️ Installation & Setup
+1. Ensure Python 3 is installed on your computer.
+2. Install the Flask framework: `pip install flask`
+3. Run the application: `python app.py`
+4. Open your browser to `http://127.0.0.1:5000`.
