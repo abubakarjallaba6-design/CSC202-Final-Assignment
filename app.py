@@ -3,9 +3,11 @@ from models import Patient  # Requirement: Import your OOP class
 
 app = Flask(__name__)
 
-# DATA STRUCTURE: This list acts as our Queue (FIFO) [Requirement: Data Structures]
+# --- PUSH 9 START ---
+# Requirement: Implementing a Queue (First-In, First-Out) for patient management
 patient_queue = []
 total_treated = 0
+# --- PUSH 9 END ---
 
 @app.route('/')
 def index():
