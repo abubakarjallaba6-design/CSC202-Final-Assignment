@@ -1,13 +1,12 @@
+
 from flask import Flask, render_template, request, redirect, url_for
 from models import Patient  # Requirement: Import your OOP class
 
 app = Flask(__name__)
 
-# --- PUSH 9 START ---
-# Requirement: Implementing a Queue (First-In, First-Out) for patient management
+# DATA STRUCTURE: Implementing a Queue (First-In, First-Out)
 patient_queue = []
 total_treated = 0
-# --- PUSH 9 END ---
 
 @app.route('/')
 def index():
@@ -37,6 +36,14 @@ def treat_patient():
         # FIFO: Remove the first person who arrived [Requirement: Queue Logic]
         patient_queue.pop(0) 
         total_treated += 1
+    return redirect(url_for('index'))
+
+@app.route('/clear')
+def clear_queue():
+    # NEW FEATURE: Logic to reset the patient queue for Push 11
+    global patient_queue, total_treated
+    patient_queue = []
+    total_treated = 0
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
