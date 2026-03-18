@@ -13,3 +13,7 @@ This project follows a modular structure to separate logic from presentation:
 - **Framework**: Flask
 - **API**: Python Datetime
 - **Data Structure**: List-based FIFO Queue
+## 📋 Data Structure: FIFO Queue
+The core of this application is a **First-In, First-Out (FIFO)** queue. In a medical clinic, it is essential to treat patients in the order they arrive. We implement this using:
+- `append()` to add patients to the end of the list.
+- `pop(0)` to remove the patient at the front of the list for treatment.
