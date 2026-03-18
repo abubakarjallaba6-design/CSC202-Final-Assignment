@@ -26,3 +26,8 @@ The `Patient` class in `model.py` demonstrates key OOP principles:
 2. Install the Flask framework: `pip install flask`
 3. Run the application: `python app.py`
 4. Open your browser to `http://127.0.0.1:5000`.
+## 🖥️ User Interface Features
+- **Dashboard**: View the current waiting list in real-time.
+- **Registration**: A simple form to input patient data.
+- **Admin Control**: A "Reset System" feature to clear the queue.
+- **Design**: Used CSS to make the app easy to read.
