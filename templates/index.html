@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html>
-<head><title>Clinic Queue</title></head>
+<head>
+    <title>Clinic Queue</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; background-color: #f4f7f6; }
+        .container { background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; }
+        .btn { padding: 10px 15px; text-decoration: none; color: white; border-radius: 5px; display: inline-block; margin-top: 10px; border: none; cursor: pointer; }
+        .btn-add { background-color: #27ae60; }
+        .btn-treat { background-color: #2980b9; }
+        .btn-clear { background-color: #e74c3c; float: right; font-size: 12px; }
+        ul { list-style: none; padding: 0; }
+        li { background: #eee; margin: 5px 0; padding: 10px; border-radius: 5px; border-left: 5px solid #3498db; }
+    </style>
+</head>
 <body>
-    <h1>🏥 Health-Clinic Dashboard</h1>
-    <p>Patients Treated Today: <strong>{{ total }}</strong></p>
-    <hr>
-    <h3>Current Waiting List:</h3>
-    <ul>
-        {% for p in queue %}
-            <li>{{ p.arrival_time }} - <strong>{{ p.name }}</strong> ({{ p.ailment }})</li>
-        {% else %}
-            <li>The queue is currently empty.</li>
-        {% endfor %}
-    </ul>
-    <a href="/add"><button>Register New Patient</button></a>
-    {% if queue %}
-        <a href="/treat"><button style="background-color: #ffcccb;">Treat Next Patient</button></a>
-    {% endif %}
+    <div class="container">
+        <a href="/clear" class="btn btn-clear" onclick="return confirm('Clear all patients?')">Reset System</a>
+        <h1>🏥 MAAUN Clinic</h1>
+        <p>Total Patients Treated Today: <strong>{{ total }}</strong></p>
+        <hr>
+        
+        <h3>Current Waiting List:</h3>
+        <ul>
+            {% for p in queue %}
+                <li>
+                    <strong>{{ p.name }}</strong> - {{ p.ailment }} <br>
+                    <small>Arrived at: {{ p.arrival_time }}</small>
+                </li>
+            {% else %}
+                <p>No patients in the queue. Relax! ☕</p>
+            {% endfor %}
+        </ul>
+
+        <a href="/add" class="btn btn-add">Register New Patient</a>
+        {% if queue %}
+            <a href="/treat" class="btn btn-treat">Treat Next Patient</a>
+        {% endif %}
+    </div>
 </body>
 </html>
-<style>
-    body { font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; }
-    .patient-card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
-</style>
